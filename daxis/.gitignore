@@ -1,3 +1,11 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Binarios de exportación
+build/
+dist/
+
+# Archivos de configuración local del editor
+.pck
+.exe
