@@ -7,8 +7,8 @@
 position = Vector2(501, 426)
 
 [node name="Floor" parent="." unique_id=2031344967 instance=ExtResource("1_8a1ph")]
-position = Vector2(52, 14)
-scale = Vector2(2, 2)
+position = Vector2(-499, -102)
+scale = Vector2(0.5, 0.5)
 
 [node name="Jugador1" parent="." unique_id=894482254 instance=ExtResource("2_wjl7u")]
 position = Vector2(49, -1)
