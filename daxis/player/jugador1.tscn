@@ -21,10 +21,6 @@ region = Rect2(164, 0, 82, 101)
 atlas = ExtResource("3_uluay")
 region = Rect2(246, 0, 82, 101)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4j4sw"]
-atlas = ExtResource("3_uluay")
-region = Rect2(328, 0, 82, 101)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_kqtha"]
 atlas = ExtResource("2_6xjp1")
 region = Rect2(0, 0, 82, 101)
@@ -79,19 +75,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oaqe1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4j4sw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4j4sw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4j4sw")
 }],
 "loop": true,
 "name": &"jump",
-"speed": 7.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -120,7 +107,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 8.0
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8s8j1"]
@@ -134,8 +121,10 @@ jump_force = -800
 
 [node name="ani_j1" type="AnimatedSprite2D" parent="." unique_id=1111112588]
 sprite_frames = SubResource("SpriteFrames_vjdt2")
-animation = &"jump"
-frame_progress = 0.91131
+animation = &"run"
+frame = 6
+frame_progress = 0.6720781
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1795544347]
 position = Vector2(5.5, 1.5)
