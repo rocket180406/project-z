@@ -118,6 +118,8 @@ script = ExtResource("1_6xjp1")
 speed = 300
 acceleration = 300
 jump_force = -800
+air_acceleration = 500
+air_friction = 200
 
 [node name="ani_j1" type="AnimatedSprite2D" parent="." unique_id=1111112588]
 sprite_frames = SubResource("SpriteFrames_vjdt2")
@@ -129,3 +131,6 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1795544347]
 position = Vector2(5.5, 1.5)
 shape = SubResource("RectangleShape2D_8s8j1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=997063290]
+limit_bottom = 650
