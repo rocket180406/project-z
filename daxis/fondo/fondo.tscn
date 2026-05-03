@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b7720ilg0226h" path="res://fondo/Assets/background_fondo.png" id="1_0qi51"]
 [ext_resource type="Texture2D" uid="uid://cgy7i6uj62i0s" path="res://fondo/Assets/background_medio4.0.png" id="2_dq6rq"]
+[ext_resource type="Texture2D" uid="uid://dnu8klb7segye" path="res://fondo/Assets/background_castillo2.0.png" id="2_og34b"]
+[ext_resource type="Texture2D" uid="uid://c8cu6ibwq6t1n" path="res://fondo/Assets/bg_cementerio2.0.png" id="4_048j0"]
 
 [node name="fondo" type="ParallaxBackground" unique_id=860348836]
 
@@ -14,16 +16,31 @@ scale = Vector2(0.7239583, 0.6201172)
 texture = ExtResource("1_0qi51")
 centered = false
 
+[node name="layer_medioFondo" type="ParallaxLayer" parent="." unique_id=499713691]
+motion_scale = Vector2(0.1, 0.2)
+
+[node name="sprt_medio_fondo" type="Sprite2D" parent="layer_medioFondo" unique_id=335844405]
+position = Vector2(105, -146)
+scale = Vector2(1.5506535, 1.6666666)
+texture = ExtResource("2_og34b")
+centered = false
+
 [node name="layer_medio" type="ParallaxLayer" parent="." unique_id=1848406129]
 motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(1152, 0)
 
 [node name="sprt_medio" type="Sprite2D" parent="layer_medio" unique_id=1586734722]
-position = Vector2(80, 47.000008)
-scale = Vector2(2.0506537, 1.5098039)
+position = Vector2(31, 22)
+scale = Vector2(1.882353, 1.4240196)
 texture = ExtResource("2_dq6rq")
 centered = false
 
-[node name="layer_primerPlano" type="ParallaxLayer" parent="." unique_id=499713691]
+[node name="layer_primerPlano" type="ParallaxLayer" parent="." unique_id=498219465]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1152, 0)
 
-[node name="sprt_primer_plano" type="Sprite2D" parent="layer_primerPlano" unique_id=335844405]
+[node name="sprt_primer_plano" type="Sprite2D" parent="layer_primerPlano" unique_id=1387925852]
+position = Vector2(31.999998, 202)
+scale = Vector2(1.9035949, 1.2818627)
+texture = ExtResource("4_048j0")
+centered = false
