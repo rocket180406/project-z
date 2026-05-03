@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dchqdqp7dy3eb" path="res://floor/floor.tscn" id="1_8a1ph"]
 [ext_resource type="PackedScene" uid="uid://mghdu04otfjk" path="res://player/jugador1.tscn" id="2_wjl7u"]
+[ext_resource type="PackedScene" uid="uid://qcmrd67j0hgu" path="res://fondo/fondo.tscn" id="3_wjl7u"]
 
 [node name="Environment" type="Node2D" unique_id=786953196]
 position = Vector2(501, 426)
@@ -11,5 +12,7 @@ position = Vector2(-499, -102)
 scale = Vector2(0.5, 0.5)
 
 [node name="Jugador1" parent="." unique_id=894482254 instance=ExtResource("2_wjl7u")]
-position = Vector2(49, -1)
+position = Vector2(-319, 159)
 scale = Vector2(0.5, 0.5)
+
+[node name="fondo" parent="." unique_id=860348836 instance=ExtResource("3_wjl7u")]
