@@ -12,15 +12,15 @@ extends CharacterBody2D
 @onready var ani_player = $ani_j1
 
 func update_animation(input_axis):
-	if input_axis !=0:
-		# velocidad de la animación será dependiente de la velocidad
-		ani_player.speed_scale = velocity.length()/100
-		ani_player.flip_h = (input_axis<0)
+	if not is_on_floor():
+		if velocity.y < 0:
+			ani_player.play("jump")
+	elif input_axis != 0:
+		ani_player.speed_scale = abs(velocity.x)/100
+		ani_player.flip_h = (input_axis < 0)
 		ani_player.play("run")
-	elif not is_on_floor():
-		ani_player.play("jump")
 	else:
-		ani_player.speed_scale=1
+		ani_player.speed_scale = 1
 		ani_player.play("idle")
 
 func _physics_process(delta: float) -> void:

@@ -13,10 +13,6 @@ region = Rect2(0, 0, 82, 101)
 atlas = ExtResource("1_8s8j1")
 region = Rect2(82, 0, 82, 101)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5c4yl"]
-atlas = ExtResource("3_uluay")
-region = Rect2(164, 0, 82, 101)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_oaqe1"]
 atlas = ExtResource("3_uluay")
 region = Rect2(246, 0, 82, 101)
@@ -67,9 +63,6 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5c4yl")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oaqe1")
 }, {
@@ -123,8 +116,8 @@ air_friction = 200
 
 [node name="ani_j1" type="AnimatedSprite2D" parent="." unique_id=1111112588]
 sprite_frames = SubResource("SpriteFrames_vjdt2")
-animation = &"jump"
-frame_progress = 0.9824126
+animation = &"idle"
+frame_progress = 0.39701656
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1795544347]
