@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://3cx31wdhwaki"]
 
 [ext_resource type="Texture2D" uid="uid://bvp6ql7mqp5cu" path="res://enemy/zombi/img/zombies_transparent.png" id="1_42utr"]
+[ext_resource type="Script" uid="uid://bh6tpegg870if" path="res://enemy/zombi/zombi.gd" id="1_xacoc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xacoc"]
 atlas = ExtResource("1_42utr")
@@ -105,7 +106,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dl4wk")
 }],
-"loop": true,
+"loop": false,
 "name": &"aparecer",
 "speed": 5.0
 }, {
@@ -125,7 +126,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_42utr")
 }],
-"loop": true,
+"loop": false,
 "name": &"ataque",
 "speed": 5.0
 }, {
@@ -159,16 +160,32 @@ animations = [{
 "duration": 10.0,
 "texture": SubResource("AtlasTexture_dt1om")
 }],
-"loop": true,
+"loop": false,
 "name": &"muerte",
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42utr"]
+size = Vector2(30, 42.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j837"]
+size = Vector2(38, 46)
+
 [node name="Zombi" type="CharacterBody2D" unique_id=1875076749]
+script = ExtResource("1_xacoc")
 
 [node name="zombi_anim" type="AnimatedSprite2D" parent="." unique_id=2098792306]
 sprite_frames = SubResource("SpriteFrames_dlgey")
-animation = &"ataque"
-frame_progress = 0.21580105
+animation = &"caminar"
 
 [node name="zombi_coll" type="CollisionShape2D" parent="." unique_id=247132537]
+position = Vector2(1, -0.25)
+shape = SubResource("RectangleShape2D_42utr")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=19934014]
+
+[node name="zombi_coll_ataque" type="CollisionShape2D" parent="Area2D" unique_id=2061544791]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_7j837")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_ene_area_body_entered"]
