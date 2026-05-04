@@ -1,0 +1,48 @@
+extends CharacterBody2D
+
+@onready var anim = $zombi_anim 
+@export var gravity_scale = 2
+
+var speed = 100
+var direction = 1  
+var state = "appear"
+
+const GRAVITY = 900
+
+func _ready():
+	randomize()
+	
+	anim.play("aparecer")
+	await anim.animation_finished
+	
+	state = "move"
+	anim.play("caminar")
+	behavior_loop()
+
+func behavior_loop():
+	while state == "move":
+		direction = [-1, 1][randi() % 2]
+		await get_tree().create_timer(randf_range(0.8, 2.5)).timeout
+
+func _physics_process(delta):
+	if state != "move":
+		return
+	
+
+	if not is_on_floor():
+		velocity.y += GRAVITY * gravity_scale * delta
+	else:
+		velocity.y = 0
+	
+	velocity.x = direction * speed
+	
+	move_and_slide()
+	
+	if anim.animation != "caminar":
+		anim.play("caminar")
+	
+	anim.flip_h = direction > 0
+	
+func _on_ene_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("jugadores"):
+		get_tree().call_deferred("reload_current_scene")
