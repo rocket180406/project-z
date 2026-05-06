@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://xhsx4ydwbjwm"]
+
+[ext_resource type="PackedScene" uid="uid://wumt0krsjj61" path="res://floor/lobby.tscn" id="1_volx1"]
+[ext_resource type="PackedScene" uid="uid://mghdu04otfjk" path="res://player/jugador1.tscn" id="2_nl2sw"]
+[ext_resource type="PackedScene" uid="uid://b2nb6wo83hhso" path="res://fondo/fondoLobby.tscn" id="3_nl2sw"]
+
+[node name="EnvLobby" type="Node2D" unique_id=1395328265]
+
+[node name="Lobby" parent="." unique_id=1978756416 instance=ExtResource("1_volx1")]
+position = Vector2(0, -21)
+
+[node name="fondo" parent="." unique_id=2134835194 instance=ExtResource("3_nl2sw")]
+
+[node name="Jugador1" parent="." unique_id=749899524 instance=ExtResource("2_nl2sw")]
+position = Vector2(18, 576)
+scale = Vector2(0.5, 0.5)

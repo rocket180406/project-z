@@ -110,7 +110,7 @@ size = Vector2(57, 93)
 script = ExtResource("1_6xjp1")
 speed = 300
 acceleration = 300
-jump_force = -800
+jump_force = -650
 air_acceleration = 500
 air_friction = 200
 
