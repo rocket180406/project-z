@@ -3,7 +3,21 @@
 [ext_resource type="Script" uid="uid://prf0e0mubkmc" path="res://player/jugador_1.gd" id="1_6xjp1"]
 [ext_resource type="Texture2D" uid="uid://crpa0ejbjixxj" path="res://player/sprites/idle_ani.png" id="1_8s8j1"]
 [ext_resource type="Texture2D" uid="uid://b7pr1e4cejiap" path="res://player/sprites/run_ani.png" id="2_6xjp1"]
+[ext_resource type="Texture2D" uid="uid://cfq5sq5hyfm25" path="res://player/sprites/ataque_ani_deffffffffff.png" id="2_kqtha"]
 [ext_resource type="Texture2D" uid="uid://c5yfo1p73o4b3" path="res://player/sprites/jump.png" id="3_uluay"]
+[ext_resource type="Texture2D" uid="uid://bum578dbaov8t" path="res://player/sprites/Health and Points Bars/Sprites/Brain Bar/Brain Stage 1.png" id="5_kqtha"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjdt2"]
+atlas = ExtResource("2_kqtha")
+region = Rect2(82, 0, 82, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mck1"]
+atlas = ExtResource("2_kqtha")
+region = Rect2(164, 0, 82, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5c4yl"]
+atlas = ExtResource("2_kqtha")
+region = Rect2(340, 0, 85, 102)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uluay"]
 atlas = ExtResource("1_8s8j1")
@@ -51,6 +65,26 @@ region = Rect2(164, 404, 82, 101)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vjdt2"]
 animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_vjdt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mck1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5c4yl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5c4yl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5c4yl")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uluay")
@@ -116,8 +150,8 @@ air_friction = 200
 
 [node name="ani_j1" type="AnimatedSprite2D" parent="." unique_id=1111112588]
 sprite_frames = SubResource("SpriteFrames_vjdt2")
-animation = &"idle"
-frame_progress = 0.39701656
+animation = &"attack"
+frame_progress = 0.20663634
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1795544347]
@@ -129,3 +163,13 @@ zoom = Vector2(2, 2)
 limit_left = -20
 limit_bottom = 650
 limit_smoothed = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=527343960]
+
+[node name="vida" type="TextureRect" parent="CanvasLayer" unique_id=805782002]
+offset_left = 21.0
+offset_top = 1.0
+offset_right = 85.0
+offset_bottom = 65.0
+texture = ExtResource("5_kqtha")
+stretch_mode = 3

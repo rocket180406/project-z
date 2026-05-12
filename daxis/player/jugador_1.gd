@@ -8,11 +8,30 @@ extends CharacterBody2D
 @export var air_acceleration = 2000
 @export var air_friction = 700
 
+var vida_max = 100
+var vida_actual = 100
 
 @onready var ani_player = $ani_j1
+@onready var vida_ui = $CanvasLayer/vida
+
+var brain_full = preload("res://player/sprites/Health and Points Bars/Sprites/Brain Bar/Brain Stage 1.png")
+var brain_mid = preload("res://player/sprites/Health and Points Bars/Sprites/Brain Bar/Brain Stage 2.png")
+var brain_low = preload("res://player/sprites/Health and Points Bars/Sprites/Brain Bar/Brain Stage 3.png")
 
 func _ready() -> void:
 	add_to_group("jugadores")
+	actualizar_vida_ui()
+
+func actualizar_vida_ui():
+
+	if vida_actual > 66:
+		vida_ui.texture = brain_full
+
+	elif vida_actual > 33:
+		vida_ui.texture = brain_mid
+
+	else:
+		vida_ui.texture = brain_low
 
 func update_animation(input_axis):
 	if not is_on_floor():
