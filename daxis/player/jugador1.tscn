@@ -150,8 +150,8 @@ air_friction = 200
 
 [node name="ani_j1" type="AnimatedSprite2D" parent="." unique_id=1111112588]
 sprite_frames = SubResource("SpriteFrames_vjdt2")
-animation = &"attack"
-frame_progress = 0.20663634
+animation = &"run"
+frame_progress = 0.5076927
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1795544347]

@@ -8,7 +8,6 @@ extends CharacterBody2D
 @export var air_acceleration = 2000
 @export var air_friction = 700
 
-var vida_max = 100
 var vida_actual = 100
 
 @onready var ani_player = $ani_j1
@@ -23,13 +22,10 @@ func _ready() -> void:
 	actualizar_vida_ui()
 
 func actualizar_vida_ui():
-
 	if vida_actual > 66:
 		vida_ui.texture = brain_full
-
 	elif vida_actual > 33:
 		vida_ui.texture = brain_mid
-
 	else:
 		vida_ui.texture = brain_low
 
@@ -71,15 +67,26 @@ func apply_friction(input_axis, delta):
 	if input_axis == 0 and is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
 
-
 func handle_jump():
 	if is_on_floor():
 		if Input.is_action_pressed("saltar"):
 			velocity.y = jump_force
 
-
 func handle_air_acceleration(input_axis, delta):
 	if is_on_floor(): return
 	if input_axis != 0:
 		velocity.x = move_toward(velocity.x, speed * input_axis, air_acceleration * delta)
+
+func recibir_dano(cantidad):
+	vida_actual -=cantidad	
+	if vida_actual < 0:
+		vida_actual = 0		
+	actualizar_vida_ui()	
+	if vida_actual <= 0:
+		morir()
 		
+func morir():
+	set_physics_process(false)
+	get_tree().call_deferred("reload_current_scene")
+	vida_actual = 100
+	actualizar_vida_ui()

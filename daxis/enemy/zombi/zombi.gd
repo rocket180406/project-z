@@ -10,8 +10,6 @@ var state = "appear"
 const GRAVITY = 900
 
 func _ready():
-	randomize()
-	
 	anim.play("aparecer")
 	await anim.animation_finished
 	
@@ -27,22 +25,16 @@ func behavior_loop():
 func _physics_process(delta):
 	if state != "move":
 		return
-	
-
 	if not is_on_floor():
 		velocity.y += GRAVITY * gravity_scale * delta
 	else:
-		velocity.y = 0
-	
-	velocity.x = direction * speed
-	
-	move_and_slide()
-	
+		velocity.y = 0	
+	velocity.x = direction * speed	
+	move_and_slide()	
 	if anim.animation != "caminar":
-		anim.play("caminar")
-	
+		anim.play("caminar")	
 	anim.flip_h = direction > 0
 	
 func _on_ene_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("jugadores"):
-		get_tree().call_deferred("reload_current_scene")
+		body.recibir_dano(34)
