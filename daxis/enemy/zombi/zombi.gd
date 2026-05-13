@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var anim = $zombi_anim 
 @export var gravity_scale = 2
 
-var speed = 100
+var speed = 50
 var direction = 1  
 var state = "appear"
 
