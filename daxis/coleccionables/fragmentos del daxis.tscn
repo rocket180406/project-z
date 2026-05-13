@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dfjbherhb7q4q"]
+
+[ext_resource type="Texture2D" uid="uid://djccpquuskjnd" path="res://coleccionables/assets/fragmento_ani2ç.png" id="1_5wv2k"]
+[ext_resource type="Script" uid="uid://uk3ctlndvdfq" path="res://coleccionables/fragmento.gd" id="1_28bhw"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_28bhw"]
+points = PackedVector2Array(-54.5, -192, 85.5, -1, -100.5, 101, -215.5, 53, -160.5, -80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkyqy"]
+atlas = ExtResource("1_5wv2k")
+region = Rect2(0, 0, 428, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mx4y"]
+atlas = ExtResource("1_5wv2k")
+region = Rect2(0, 358, 412, 278)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1otg6"]
+atlas = ExtResource("1_5wv2k")
+region = Rect2(748, 0, 339, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcbc5"]
+atlas = ExtResource("1_5wv2k")
+region = Rect2(1107, 0, 369, 341)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dc32y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkyqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkyqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mx4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1otg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcbc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcbc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkyqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkyqy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=583947106]
+script = ExtResource("1_28bhw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=354465110]
+position = Vector2(88.5, 74)
+shape = SubResource("ConvexPolygonShape2D_28bhw")
+
+[node name="ani_fragmento" type="AnimatedSprite2D" parent="." unique_id=1722049769]
+sprite_frames = SubResource("SpriteFrames_dc32y")
+frame_progress = 0.19107424
