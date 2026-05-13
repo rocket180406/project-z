@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://mghdu04otfjk" path="res://player/jugador1.tscn" id="2_wjl7u"]
 [ext_resource type="PackedScene" uid="uid://qcmrd67j0hgu" path="res://fondo/fondoCementerio.tscn" id="3_wjl7u"]
 [ext_resource type="PackedScene" uid="uid://3cx31wdhwaki" path="res://enemy/zombi/zombi.tscn" id="4_7uceq"]
+[ext_resource type="PackedScene" uid="uid://dfjbherhb7q4q" path="res://coleccionables/fragmentos del daxis.tscn" id="5_abtij"]
 
 [node name="Environment" type="Node2D" unique_id=786953196]
 position = Vector2(501, 426)
@@ -20,3 +21,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Zombi" parent="." unique_id=1875076749 instance=ExtResource("4_7uceq")]
 position = Vector2(-85, 164)
+
+[node name="Area2D" parent="." unique_id=583947106 instance=ExtResource("5_abtij")]
+position = Vector2(3688, -249)
+scale = Vector2(0.07, 0.07)
