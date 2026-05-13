@@ -9,9 +9,11 @@ extends CharacterBody2D
 @export var air_friction = 700
 
 var vida_actual = 100
+var checkpoint_pos = Vector2()
 
 @onready var ani_player = $ani_j1
 @onready var vida_ui = $CanvasLayer/vida
+@onready var mensaje_ui = $CanvasLayer/mensaje
 
 var brain_full = preload("res://player/sprites/Health and Points Bars/Sprites/Brain Bar/Brain Stage 1.png")
 var brain_mid = preload("res://player/sprites/Health and Points Bars/Sprites/Brain Bar/Brain Stage 2.png")
@@ -20,6 +22,7 @@ var brain_low = preload("res://player/sprites/Health and Points Bars/Sprites/Bra
 func _ready() -> void:
 	add_to_group("jugadores")
 	actualizar_vida_ui()
+	checkpoint_pos = global_position
 
 func actualizar_vida_ui():
 	if vida_actual > 66:
@@ -97,6 +100,19 @@ func recibir_dano(cantidad):
 		
 func morir():
 	set_physics_process(false)
-	get_tree().call_deferred("reload_current_scene")
+	
+	global_position = checkpoint_pos
+	velocity = Vector2.ZERO
+	
 	vida_actual = 100
 	actualizar_vida_ui()
+	
+	set_physics_process(true)
+	
+
+func mostrar_mensaje(texto: String):
+	mensaje_ui.text = texto
+	mensaje_ui.visible = true
+	
+	await get_tree().create_timer(2.0).timeout
+	mensaje_ui.visible = false
