@@ -49,7 +49,9 @@ func _physics_process(delta: float) -> void:
 	handle_jump()
 	handle_air_acceleration(input_axis, delta)
 	update_animation(input_axis)
+	comprobar_dano_tilemap()
 	move_and_slide()
+	
 
 
 func apply_gravity(delta):
@@ -76,7 +78,15 @@ func handle_air_acceleration(input_axis, delta):
 	if is_on_floor(): return
 	if input_axis != 0:
 		velocity.x = move_toward(velocity.x, speed * input_axis, air_acceleration * delta)
+		
+func comprobar_dano_tilemap():
 
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if collider.name == "peligros":
+			recibir_dano(34)
+				
 func recibir_dano(cantidad):
 	vida_actual -=cantidad	
 	if vida_actual < 0:

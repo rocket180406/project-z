@@ -29,11 +29,11 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += GRAVITY * gravity_scale * delta
 	else:
-		velocity.y = 0	
-	velocity.x = direction * speed	
-	move_and_slide()	
+		velocity.y = 0
+	velocity.x = direction * speed
+	move_and_slide()
 	if anim.animation != "caminar":
-		anim.play("caminar")	
+		anim.play("caminar")
 	anim.flip_h = direction > 0
 	
 func _on_ene_area_body_entered(body: Node2D) -> void:
