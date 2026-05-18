@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://p2q4nfh6c8kq"]
+
+[ext_resource type="Script" uid="uid://cdpjnx4lejtee" path="res://interaccion/banco/banco.gd" id="1_vewkb"]
+[ext_resource type="Texture2D" uid="uid://cvb8brm72d3p0" path="res://interaccion/banco/Assets/banco.png" id="2_bghxh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1t130"]
+size = Vector2(848, 473)
+
+[node name="Banco" type="Area2D" unique_id=80137328]
+script = ExtResource("1_vewkb")
+
+[node name="ani_banco" type="Sprite2D" parent="." unique_id=1186864287]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(510, 349)
+texture = ExtResource("2_bghxh")
+region_enabled = true
+region_rect = Rect2(107.199936, 294.9, 816.2, 452.884)
+
+[node name="coll_banco" type="CollisionShape2D" parent="." unique_id=226035815]
+position = Vector2(506, 338.5)
+shape = SubResource("RectangleShape2D_1t130")
+
+[node name="msg_interaccion" type="Label" parent="." unique_id=1740996175]
+offset_left = 204.0
+offset_top = 14.0
+offset_right = 813.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 55
+text = "[E] Guardar checkpoint"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

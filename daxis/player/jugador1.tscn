@@ -173,3 +173,9 @@ offset_right = 85.0
 offset_bottom = 65.0
 texture = ExtResource("5_kqtha")
 stretch_mode = 3
+
+[node name="mensaje" type="Label" parent="CanvasLayer" unique_id=821743146]
+offset_left = 560.0
+offset_top = 353.0
+offset_right = 600.0
+offset_bottom = 376.0
