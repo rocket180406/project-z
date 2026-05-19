@@ -9,9 +9,7 @@ size = Vector2(848, 473)
 [node name="Banco" type="Area2D" unique_id=80137328]
 script = ExtResource("1_vewkb")
 
-[node name="ani_banco" type="Sprite2D" parent="." unique_id=1186864287]
-light_mask = 2
-visibility_layer = 2
+[node name="spr_banco" type="Sprite2D" parent="." unique_id=1186864287]
 position = Vector2(510, 349)
 texture = ExtResource("2_bghxh")
 region_enabled = true
