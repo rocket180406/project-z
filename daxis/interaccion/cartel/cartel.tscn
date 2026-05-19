@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://knhkuogb1o80"]
+
+[ext_resource type="Script" uid="uid://lqynreuu38kb" path="res://interaccion/cartel/cartel.gd" id="1_3wdes"]
+[ext_resource type="Texture2D" uid="uid://bu3gbgwe5qo3u" path="res://interaccion/cartel/assets/assetCartel.png" id="2_p5lf6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1t130"]
+size = Vector2(1501, 1033)
+
+[node name="Cartel" type="Area2D" unique_id=80137328]
+script = ExtResource("1_3wdes")
+
+[node name="spr_cartel" type="Sprite2D" parent="." unique_id=1186864287]
+position = Vector2(510, 349)
+texture = ExtResource("2_p5lf6")
+region_enabled = true
+region_rect = Rect2(48.407745, 71.11654, 946.0137, 840.6359)
+
+[node name="coll_cartel" type="CollisionShape2D" parent="." unique_id=226035815]
+position = Vector2(496.5, 271.5)
+shape = SubResource("RectangleShape2D_1t130")
+
+[node name="msg_interaccion" type="Label" parent="." unique_id=1740996175]
+visible = false
+offset_left = 89.0
+offset_top = -187.0
+offset_right = 920.0
+offset_bottom = -81.0
+theme_override_font_sizes/font_size = 77
+text = "[E] Controles del juego"
+
+[node name="texto" type="Label" parent="." unique_id=373647546]
+visible = false
+offset_left = -308.0
+offset_top = -101.0
+offset_right = 1547.0
+offset_bottom = 516.0
+theme_override_font_sizes/font_size = 112
+text = "[⬅️][⬆️][⬇️][➡️] Mover
+[ESPACIO] Saltar
+[E] Interactuar con el entorno"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
