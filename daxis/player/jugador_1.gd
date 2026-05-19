@@ -12,7 +12,6 @@ var vida_actual = 100
 var invulnerable := false
 
 var checkpoint_pos = Vector2()
-var last_safe_position = Vector2()
 
 @onready var ani_player = $ani_j1
 @onready var vida_ui = $CanvasLayer/vida
@@ -28,7 +27,6 @@ func _ready() -> void:
 	actualizar_vida_ui()
 
 	checkpoint_pos = global_position
-	last_safe_position = global_position
 
 
 func actualizar_vida_ui():
@@ -62,12 +60,7 @@ func _physics_process(delta: float) -> void:
 	handle_jump()
 	handle_air_acceleration(input_axis, delta)
 	update_animation(input_axis)
-
 	comprobar_dano_tilemap()
-
-	if is_on_floor():
-		last_safe_position = global_position
-
 	move_and_slide()
 
 
@@ -123,23 +116,28 @@ func comprobar_dano_tilemap():
 
 			if damage == true:
 				recibir_dano(34)
+				respawn_checkpoint()
 				break
 
-
+func respawn_checkpoint():
+	invulnerable = true
+	global_position = checkpoint_pos
+	velocity = Vector2.ZERO
+	
+	await get_tree().process_frame
+	
+	invulnerable = false
+	
 
 func recibir_dano(cantidad):
 	if invulnerable:
-		return
+		return	
 	vida_actual -= cantidad
 	if vida_actual < 0:
 		vida_actual = 0
-
 	actualizar_vida_ui()
-
 	if vida_actual <= 0:
 		morir()
-	else:
-		respawn_zona_segura()
 
 
 func morir():
@@ -151,19 +149,6 @@ func morir():
 
 	vida_actual = 100
 	actualizar_vida_ui()
-
-	await get_tree().process_frame
-
-	set_physics_process(true)
-	invulnerable = false
-
-
-func respawn_zona_segura():
-	invulnerable = true
-	set_physics_process(false)
-
-	global_position = last_safe_position
-	velocity = Vector2.ZERO
 
 	await get_tree().process_frame
 
