@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvb8brm72d3p0"
-path="res://.godot/imported/banco.png-f4e541afe232763bcc32d31f8ae2c185.ctex"
+path="res://.godot/imported/banco.png-5512a4e6144346623074dfccde39c2c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interaccion/banco/Assets/banco.png"
-dest_files=["res://.godot/imported/banco.png-f4e541afe232763bcc32d31f8ae2c185.ctex"]
+source_file="res://interaccion/banco/assets/banco.png"
+dest_files=["res://.godot/imported/banco.png-5512a4e6144346623074dfccde39c2c3.ctex"]
 
 [params]
 
