@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://p2q4nfh6c8kq"]
 
 [ext_resource type="Script" uid="uid://cdpjnx4lejtee" path="res://interaccion/banco/banco.gd" id="1_vewkb"]
-[ext_resource type="Texture2D" uid="uid://cvb8brm72d3p0" path="res://interaccion/banco/Assets/banco.png" id="2_bghxh"]
+[ext_resource type="Texture2D" uid="uid://cvb8brm72d3p0" path="res://interaccion/banco/assets/banco.png" id="2_bghxh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1t130"]
 size = Vector2(848, 473)

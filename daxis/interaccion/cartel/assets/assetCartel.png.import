@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvb8brm72d3p0"
-path="res://.godot/imported/banco.png-5512a4e6144346623074dfccde39c2c3.ctex"
+uid="uid://bu3gbgwe5qo3u"
+path="res://.godot/imported/assetCartel.png-7e819e830469f55120b57a313a9171a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interaccion/banco/assets/banco.png"
-dest_files=["res://.godot/imported/banco.png-5512a4e6144346623074dfccde39c2c3.ctex"]
+source_file="res://interaccion/cartel/assets/assetCartel.png"
+dest_files=["res://.godot/imported/assetCartel.png-7e819e830469f55120b57a313a9171a5.ctex"]
 
 [params]
 
