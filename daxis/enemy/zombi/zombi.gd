@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var anim = $zombi_anim 
 @export var gravity_scale = 2
 @export var dano_zombi = 34
+@export var fuerza_empuje = 400
 
 var speed = 50
 var direction = 1  
@@ -38,4 +39,11 @@ func _physics_process(delta):
 	
 func _on_ene_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("jugadores"):
+		
 		body.recibir_dano(dano_zombi)
+		
+		if body is CharacterBody2D:
+			var direccion = (body.global_position - global_position).normalized()
+			direccion.y = -0.2 
+
+			body.velocity += direccion * fuerza_empuje
