@@ -146,6 +146,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_jyi80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cajl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_hc2vb")
 }, {
 "duration": 1.0,
@@ -176,8 +187,8 @@ script = ExtResource("1_xacoc")
 
 [node name="zombi_anim" type="AnimatedSprite2D" parent="." unique_id=2098792306]
 sprite_frames = SubResource("SpriteFrames_dlgey")
-animation = &"caminar"
-frame_progress = 0.34577388
+animation = &"idle"
+frame_progress = 0.94601226
 
 [node name="zombi_coll" type="CollisionShape2D" parent="." unique_id=247132537]
 position = Vector2(1, -0.25)
@@ -188,5 +199,13 @@ shape = SubResource("RectangleShape2D_42utr")
 [node name="zombi_coll_ataque" type="CollisionShape2D" parent="Area2D" unique_id=2061544791]
 position = Vector2(1, -2.5)
 shape = SubResource("RectangleShape2D_7j837")
+
+[node name="detector_izq" type="RayCast2D" parent="." unique_id=1524072878]
+position = Vector2(-19, 0)
+target_position = Vector2(-1, 34)
+
+[node name="detector_der" type="RayCast2D" parent="." unique_id=1013053983]
+position = Vector2(21, 0)
+target_position = Vector2(1, 37)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_ene_area_body_entered"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bpuyqjxd3gp20"]
 
-[ext_resource type="Script" path="res://coleccionables/fragmento.gd" id="1_vw8fh"]
-[ext_resource type="Texture2D" path="res://coleccionables/assets/fragmento_ani2ç.png" id="2_hn23r"]
+[ext_resource type="Script" uid="uid://uk3ctlndvdfq" path="res://coleccionables/fragmento.gd" id="1_vw8fh"]
+[ext_resource type="Texture2D" uid="uid://djccpquuskjnd" path="res://coleccionables/assets/fragmento_ani2ç.png" id="2_hn23r"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_28bhw"]
 points = PackedVector2Array(-54.5, -192, 85.5, -1, -100.5, 101, -215.5, 53, -160.5, -80)
@@ -54,7 +54,7 @@ animations = [{
 "speed": 9.0
 }]
 
-[node name="Area2D" type="Area2D" unique_id=583947106]
+[node name="fragmento" type="Area2D" unique_id=583947106]
 script = ExtResource("1_vw8fh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=354465110]
@@ -63,4 +63,6 @@ shape = SubResource("ConvexPolygonShape2D_28bhw")
 
 [node name="ani_fragmento" type="AnimatedSprite2D" parent="." unique_id=1722049769]
 sprite_frames = SubResource("SpriteFrames_dc32y")
-frame_progress = 0.19107424
+frame_progress = 0.40666518
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://dhxahvbtcw74v"]
 
 [ext_resource type="PackedScene" uid="uid://dchqdqp7dy3eb" path="res://floor/cementerio.tscn" id="1_8a1ph"]
+[ext_resource type="PackedScene" uid="uid://darg33co1dbsv" path="res://portal/portal.tscn" id="2_37xmn"]
 [ext_resource type="PackedScene" uid="uid://mghdu04otfjk" path="res://player/jugador1.tscn" id="2_wjl7u"]
 [ext_resource type="PackedScene" uid="uid://qcmrd67j0hgu" path="res://fondo/fondoCementerio.tscn" id="3_wjl7u"]
 [ext_resource type="PackedScene" uid="uid://3cx31wdhwaki" path="res://enemy/zombi/zombi.tscn" id="4_7uceq"]
-[ext_resource type="PackedScene" uid="uid://dfjbherhb7q4q" path="res://coleccionables/fragmentos del daxis.tscn" id="5_abtij"]
+[ext_resource type="PackedScene" uid="uid://bpuyqjxd3gp20" path="res://coleccionables/fragmento.tscn" id="6_37xmn"]
 
 [node name="Environment" type="Node2D" unique_id=786953196]
 position = Vector2(501, 426)
@@ -13,15 +14,38 @@ position = Vector2(501, 426)
 position = Vector2(-499, -102)
 scale = Vector2(0.5, 0.5)
 
+[node name="portal" parent="." unique_id=21541263 instance=ExtResource("2_37xmn")]
+position = Vector2(3950, 66)
+scale = Vector2(0.3, 0.3)
+
 [node name="Jugador1" parent="." unique_id=894482254 instance=ExtResource("2_wjl7u")]
-position = Vector2(-319, 159)
+position = Vector2(-293, 162)
 scale = Vector2(0.5, 0.5)
 
 [node name="fondo" parent="." unique_id=860348836 instance=ExtResource("3_wjl7u")]
 
 [node name="Zombi" parent="." unique_id=1875076749 instance=ExtResource("4_7uceq")]
-position = Vector2(-85, 164)
+position = Vector2(877, 162)
 
-[node name="Area2D" parent="." unique_id=583947106 instance=ExtResource("5_abtij")]
-position = Vector2(3688, -249)
-scale = Vector2(0.07, 0.07)
+[node name="fragmento" parent="." unique_id=583947106 instance=ExtResource("6_37xmn")]
+position = Vector2(3704, -253)
+scale = Vector2(0.1, 0.1)
+portal_path = NodePath("../portal")
+
+[node name="Zombi2" parent="." unique_id=2105138450 instance=ExtResource("4_7uceq")]
+position = Vector2(-45, 162)
+
+[node name="Zombi3" parent="." unique_id=780517531 instance=ExtResource("4_7uceq")]
+position = Vector2(1777, 162)
+
+[node name="Zombi4" parent="." unique_id=1206974853 instance=ExtResource("4_7uceq")]
+position = Vector2(2448, 158)
+
+[node name="Zombi5" parent="." unique_id=692217602 instance=ExtResource("4_7uceq")]
+position = Vector2(2969, 162)
+
+[node name="Zombi6" parent="." unique_id=1307095347 instance=ExtResource("4_7uceq")]
+position = Vector2(3521, -114)
+
+[node name="Zombi7" parent="." unique_id=1748893297 instance=ExtResource("4_7uceq")]
+position = Vector2(3746, 161)
